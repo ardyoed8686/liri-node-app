@@ -1,5 +1,6 @@
 // add code to read and set any environment variables with the dotenv package:
 require("dotenv").config();
+
 // add code to require axios package
 var axios = require("axios");
 
@@ -11,8 +12,7 @@ var spotify = new Spotify(keys.spotify);
 
 // create variable to take in commands
 var command = (process.argv[2]);
-var artist = (process.argv[3]);
-
+var artist = (process.argv[2]);
 
 
 // setup axios for Bnds in Town API
@@ -34,3 +34,5 @@ axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=cod
     }
     console.log(error.config);
 });
+
+// setup Spotify Axios call
