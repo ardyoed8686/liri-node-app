@@ -18,20 +18,20 @@ var command = (process.argv[2]);
 var userInput = (process.argv[3]);
 
 switch (action) {
-  case "total":
-    total();
+  case "concert":
+    concert();
     break;
   
-  case "deposit":
-    deposit();
+  case "spotify":
+    spotify();
     break;
   
-  case "withdraw":
-    withdraw();
+  case "movie":
+    movie();
     break;
   
-  case "lotto":
-    lotto();
+  case "doWhatItSays":
+    doWhatItSays();
     break;
   }
 
@@ -39,46 +39,34 @@ switch (action) {
 
   //  function for concert-this
 function concert() {
+  // setup axios for Bnds in Town API
   axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function(response){
-    
     console.log("Here's what we got " + response.data);
-})
-  
+    console.log(dat.name);
+  // console.log venue & date (using moment.js)
+  })
 };
 
-// setup axios for Bnds in Town API
-axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function(response){
-    console.log("Here's what we got " + response.data);
-})
 
-.catch(function (error) {
-    if (error.response) {
-        console.log("---------------Data---------------");
-        console.log(error.response.data);
-        console.log("---------------Status---------------");
-        console.log(error.response.status);
-        console.log("---------------Status---------------");
-        console.log(error.response.headers);
-    } else if (error.request) {
-        console.log(error.request);
-    } else {
-        console.log("Error", error.message);
-    }
-    console.log(error.config);
-});
 
 // setup Spotify call
-spotify
-  .search({ type: 'track', query: 'All the Small Things' })
-  .then(function(response) {
-    console.log(response);
-  })
-  .catch(function(err) {
-    console.log(err);
-  });
+spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
+  if (err) {
+    return console.log('Error occurred: ' + err);
+    spotify.search({type: 'track', query: 'The Sign'},)
+  }
+ 
+console.log(data); 
+console.log(data.name)
+// console log song name, preview link, album
+
+
+});
 
 
 
+// create movie function
+function movie() {
 // setup OMDB axios get
 
 var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
@@ -87,8 +75,19 @@ var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey
 
 axios.get(queryUrl).then(function(response) {
 console.log(queryUrl);
+console.log("Your movie data" + response.data);
 console.log(response.data.Year);
-
+// console log 
+// * Title of the movie.
+// * Year the movie came out.
+// * IMDB Rating of the movie.
+// * Rotten Tomatoes Rating of the movie.
+// * Country where the movie was produced.
+// * Language of the movie.
+// * Plot of the movie.
+// * Actors in the movie.
 });
+  
+};
 
-// function for concert-this
+
