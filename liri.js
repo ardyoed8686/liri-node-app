@@ -18,19 +18,19 @@ var command = (process.argv[2]);
 var userInput = (process.argv[3]);
 
 switch (action) {
-  case "concert":
+  case "concert-this":
     concert();
     break;
   
-  case "spotify":
+  case "spotify-this-song":
     spotify();
     break;
   
-  case "movie":
+  case "movie-this":
     movie();
     break;
   
-  case "doWhatItSays":
+  case "do-what-it-says":
     doWhatItSays();
     break;
   }
@@ -39,6 +39,7 @@ switch (action) {
 
   //  function for concert-this
 function concert() {
+
   // setup axios for Bnds in Town API
   axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function(response){
     console.log("Here's what we got " + response.data);
@@ -87,7 +88,18 @@ console.log(response.data.Year);
 // * Plot of the movie.
 // * Actors in the movie.
 });
-  
+  //  * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
+};
+
+// create function for do-what-it-says
+function doWhatItSays() {
+    // use fs to read 
+    fs.readFile("random.txt", "utf8", function(err, data) {
+      if (err) {
+        return console.log(err);
+      }
+    })
 };
 
 
+ 
