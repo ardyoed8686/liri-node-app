@@ -42,9 +42,12 @@ function concert() {
 
   // setup axios for Bnds in Town API
   axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function(response){
-    console.log("Here's what we got " + response.data);
-    console.log(data.name);
+    // console.log(response);
+    console.log(JSON.stringify(response.data));
+    console.log(response.data[0].lineup[0]);
+    console.log(response.data[0].venue.name);
   // console.log venue & date (using moment.js)
+   console.log(response.data[0].datetime);
   })
 };
 
