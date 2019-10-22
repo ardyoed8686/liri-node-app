@@ -86,12 +86,13 @@ console.log("Language: " + response.data.Language);
 console.log("Plot: " + response.data.Plot);
 console.log("Actors: " + response.data.Actors);
 console.log("------------------");
-});
+
+//  * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
 if (userInput === "") {
-  userInput = Mr. Nobody;
-  
-}
-  //  * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
+  userInput = "Mr. Nobody";
+  movie();
+  }
+})
 };
 
 // create function for do-what-it-says
@@ -103,6 +104,3 @@ function doWhatItSays() {
       }
     })
 };
-
-
- 
