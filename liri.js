@@ -1,6 +1,9 @@
 // add code to read and set any environment variables with the dotenv package:
 require("dotenv").config();
 
+// require moment.js npm package
+var moment = require("moment");
+
 // add code to require axios package
 var axios = require("axios");
 
@@ -43,11 +46,13 @@ function concert() {
   // setup axios for Bnds in Town API
   axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function(response){
     // console.log(response);
-    console.log(JSON.stringify(response.data));
+    // console.log(JSON.stringify(response.data));
+    console.log("-----------------");
     console.log(response.data[0].lineup[0]);
+    // console.log venue & date (using moment.js)
     console.log(response.data[0].venue.name);
-  // console.log venue & date (using moment.js)
-   console.log(response.data[0].datetime);
+    var showTime = moment(response.data[0].datetime).format("LLLL")
+    console.log(showTime);
   })
 };
 
