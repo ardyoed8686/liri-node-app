@@ -7,14 +7,17 @@ var moment = require("moment");
 // add code to require axios package
 var axios = require("axios");
 
-// code required to import the `keys.js` file and store it in a variable
-// var keys = require("./keys.js");
-
 // get node package for read and write of text files
 var fs = require("fs");
 
+// code required to import the `keys.js` file and store it in a variable
+var keys = require("./keys.js");
+
+// code require to import the spotify package
+var Spotify = require('node-spotify-api');
+
 // access your keys information like so
-// var spotify = new Spotify(keys.spotify);
+var spotify = new Spotify(keys.spotify);
 
 // create variable to take in commands
 var command = (process.argv[2]);
@@ -25,9 +28,9 @@ switch (command) {
     concert();
     break;
   
-  // case "spotify-this-song":
-  //   spotify();
-  //   break;
+  case "spotify-this-song":
+    song();
+    break;
   
   case "movie-this":
     movie();
@@ -39,7 +42,6 @@ switch (command) {
   }
 
 
-
   //  function for concert-this
 function concert() {
 
@@ -47,30 +49,52 @@ function concert() {
   axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function(response){
     // console.log(response);
     // console.log(JSON.stringify(response.data));
-    console.log("-----------------");
+    console.log("------------------");
     console.log(response.data[0].lineup[0]);
     // console.log venue & date (using moment.js)
     console.log(response.data[0].venue.name);
     var showTime = moment(response.data[0].datetime).format("LLLL")
     console.log(showTime);
+    console.log("------------------");
   })
 };
 
 
 
 // setup Spotify call
-// spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
-//   if (err) {
-//     return console.log('Error occurred: ' + err);
-//     spotify.search({type: 'track', query: 'The Sign'},)
-//   }
- 
-// console.log(data); 
-// console.log(data.name)
-// // console log song name, preview link, album
+function song() {
+  if (userInput === undefined) {
+    userInput = "The Sign";
+  }
+  spotify.search({ type: 'track', query: userInput }, function(err, data) {
+    if (err) {
+      console.log('Error occurred: ' + err);
+      return
+    }
+    else {
+      for (let i = 0; i < data.tracks.items.length; i++) {
+        // console.log(data.tracks.items[1]);
+
+        console.log("------------------");
+        // * This will show the following information about the song in your terminal/bash window
+
+        // * Artist(s)
+        console.log(data.tracks.items[i].album.artists);
+        // * The song's name
+        console.log(data.tracks.items[i].name);
+        // * A preview link of the song from Spotify
+        console.log(data.tracks.items[i].preview_url);
+        // * The album that the song is from
+        console.log(data.tracks.items[i].album.name);
+        console.log("------------------");
+        
+      }
+
+    }
+})
+};
 
 
-// });
 
 
 
@@ -96,8 +120,10 @@ console.log("Actors: " + response.data.Actors);
 console.log("------------------");
 
 //  * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
-if (userInput === "") {
-  userInput = "Mr. Nobody";
+if (userInput === 0) {
+
+  console.log("If you haven't watched 'Mr. Nobody,' then you should: <http://www.imdb.com/title/tt0485947/>")
+   let userInput = "Mr. Nobody";
   movie();
   }
 })
@@ -105,10 +131,13 @@ if (userInput === "") {
 
 // create function for do-what-it-says
 function doWhatItSays() {
-    // use fs to read 
+    // use fs to read file random.txt 
     fs.readFile("random.txt", "utf8", function(err, data) {
       if (err) {
         return console.log(err);
+      }
+      else {
+
       }
     })
 };
