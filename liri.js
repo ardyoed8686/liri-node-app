@@ -119,13 +119,20 @@ console.log("------------------");
 
 // create function for do-what-it-says
 function doWhatItSays() {
+  
     // use fs to read file random.txt 
     fs.readFile("random.txt", "utf8", function(err, data) {
       if (err) {
         return console.log(err);
       }
       else {
-
+        var output = data.split(",");
+        for (var i = 0; i < output.length; i++) {
+          console.log(output[i]);
+        }
+        var command = output[0];
+        var userInput = output[1];
+        // run spotify-this based on text in random.txt
       }
     })
 };

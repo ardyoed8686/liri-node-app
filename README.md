@@ -44,4 +44,5 @@ Commands
 
 Also, required to import the `keys.js` file and store it in a variable
 
+Author: Romy Owens
    
