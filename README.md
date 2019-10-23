@@ -33,7 +33,7 @@ Commands
    Console.log of `node liri.js spotify-this-song`
 
 5. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.16.10%20PM.png)
-   console.log of `node liri.js concert-this <artist/band name here>`
+   Console.log of `node liri.js concert-this <artist/band name here>`
 
 
 ### Deployed Link
