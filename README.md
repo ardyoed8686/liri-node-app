@@ -22,4 +22,26 @@ Commands
 
 1. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.11.13%20PM.png)
 
+2. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.11.50%20PM.png)
+
+3. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.13.41%20PM.png)
+
+4. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.14.50%20PM.png)
+
+5. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.16.10%20PM.png)
+
+
+### Deployed Link
+ - https://ardyoed8686.github.io/liri-node-app/
+
+
+### Technologies Used
+*  dotenv package:
+*  moment.js npm package
+*  axios package
+*  fs package for read and write of text files
+*  Node-Spotify-API package
+
+Also, required to import the `keys.js` file and store it in a variable
+
    
