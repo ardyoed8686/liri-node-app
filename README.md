@@ -20,6 +20,6 @@ Commands
 
    ### Screenshots
 
-* Item 1 (liri-node-app/images/Screen Shot 2019-10-22 at 8.11.13 PM.png)
+1. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.11.13%20PM.png)
 
    
