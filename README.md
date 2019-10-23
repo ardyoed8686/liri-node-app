@@ -18,4 +18,8 @@ Commands
    `node liri.js spotify-this-song '<song name here>'`
    `node liri.js do-what-it-says`
 
+   ### Screenshots
+
+* Item 1 (liri-node-app/images/Screen Shot 2019-10-22 at 8.11.13 PM.png)
+
    
