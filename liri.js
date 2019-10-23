@@ -76,16 +76,14 @@ function song() {
         // console.log(data.tracks.items[1]);
 
         console.log("------------------");
-        // * This will show the following information about the song in your terminal/bash window
-
         // * Artist(s)
-        console.log(data.tracks.items[i].album.artists);
+        console.log("Artist(s): " + data.tracks.items[i].album.artists);
         // * The song's name
-        console.log(data.tracks.items[i].name);
+        console.log("Song name: " + data.tracks.items[i].name);
         // * A preview link of the song from Spotify
-        console.log(data.tracks.items[i].preview_url);
+        console.log("Preview link: " + data.tracks.items[i].preview_url);
         // * The album that the song is from
-        console.log(data.tracks.items[i].album.name);
+        console.log("Album: " + data.tracks.items[i].album.name);
         console.log("------------------");
         
       }
@@ -93,10 +91,6 @@ function song() {
     }
 })
 };
-
-
-
-
 
 // create movie function
 function movie() {
