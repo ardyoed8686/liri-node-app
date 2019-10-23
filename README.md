@@ -24,7 +24,7 @@ Commands
 
 2. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.11.50%20PM.png)
 
-3. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.13.41%20PM.png)
+3. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-23%20at%206.51.14%20AM.png)
 
 4. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.14.50%20PM.png)
 
