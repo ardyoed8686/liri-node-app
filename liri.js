@@ -76,7 +76,8 @@ function song() {
 
         console.log("------------------");
         // * Artist(s)
-        console.log("Artist(s): " + data.tracks.items[i].album.artists);
+        console.log(data.tracks.items[i].album.artists[0].name);
+        // console.log("Artist(s): " + data.tracks.items[i].album.artists);
         // * The song's name
         console.log("Song name: " + data.tracks.items[i].name);
         // * A preview link of the song from Spotify
