@@ -21,14 +21,19 @@ Commands
    ### Screenshots
 
 1. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.11.13%20PM.png)
+   Console.log of `node liri.js movie-this '<movie name here>'`
 
 2. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.11.50%20PM.png)
+   Console.log of `node liri.js movie-this'`
 
 3. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-23%20at%206.51.14%20AM.png)
+   Console.log of `node liri.js spotify-this-song '<song name here>'`
 
-4. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.14.50%20PM.png)
+4. ()
+
 
 5. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.16.10%20PM.png)
+   console.log of `node liri.js concert-this <artist/band name here>`
 
 
 ### Deployed Link
