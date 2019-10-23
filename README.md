@@ -20,7 +20,7 @@ Commands
 
    ### Screenshots
 
-1. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.11.13%20PM.png)
+1. ![liri movie-this](https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.11.13%20PM.png)
    Console.log of `node liri.js movie-this '<movie name here>'`
 
 2. (https://github.com/ardyoed8686/liri-node-app/blob/master/images/Screen%20Shot%202019-10-22%20at%208.11.50%20PM.png)
