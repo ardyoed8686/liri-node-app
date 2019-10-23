@@ -59,10 +59,9 @@ function concert() {
   })
 };
 
-
-
 // setup Spotify call
 function song() {
+  //  * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
   if (userInput === undefined) {
     userInput = "The Sign";
   }
@@ -95,7 +94,9 @@ function song() {
 // create movie function
 function movie() {
 // setup OMDB axios get
-
+if (userInput === undefined) {
+  userInput = "Mr. Nobody";
+}
 var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
 
 // Request with axios to the OMDB API with the movie specified
@@ -113,13 +114,6 @@ console.log("Plot: " + response.data.Plot);
 console.log("Actors: " + response.data.Actors);
 console.log("------------------");
 
-//  * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
-if (userInput === 0) {
-
-  console.log("If you haven't watched 'Mr. Nobody,' then you should: <http://www.imdb.com/title/tt0485947/>")
-   let userInput = "Mr. Nobody";
-  movie();
-  }
 })
 };
 
