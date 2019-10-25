@@ -19,31 +19,36 @@ var Spotify = require('node-spotify-api');
 // access your keys information like so
 var spotify = new Spotify(keys.spotify);
 
-// create variable to take in commands
-var command = (process.argv[2]);
-var userInput = (process.argv[3]);
 
-switch (command) {
-  case "concert-this":
-    concert();
-    break;
-  
-  case "spotify-this-song":
-    song();
-    break;
-  
-  case "movie-this":
-    movie();
-    break;
-  
-  case "do-what-it-says":
-    doWhatItSays();
-    break;
-  }
+
+// create function to evaluate userinput
+var evaluate = function (command, userInput) {
+  switch (command) {
+    case "concert-this":
+      concert(userInput);
+      break;
+    
+    case "spotify-this-song":
+      song(userInput);
+      break;
+    
+    case "movie-this":
+      movie(userInput);
+      break;
+    
+    case "do-what-it-says":
+      doWhatItSays(userInput);
+      break;
+    }
+};
+
+
+
 
 
   //  function for concert-this
-function concert() {
+function concert(userInput) {
+console.log("I am " + userInput);
 
   // setup axios for Bnds in Town API
   axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function(response){
@@ -60,7 +65,7 @@ function concert() {
 };
 
 // setup Spotify call
-function song() {
+function song(userInput) {
   //  * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
   if (userInput === undefined) {
     userInput = "The Sign";
@@ -73,6 +78,7 @@ function song() {
     else {
       for (let i = 0; i < data.tracks.items.length; i++) {
         // console.log(data.tracks.items[1]);
+        console.log([i]);
 
         console.log("------------------");
         // * Artist(s)
@@ -92,7 +98,7 @@ function song() {
 };
 
 // create movie function
-function movie() {
+function movie(userInput) {
 // setup OMDB axios get
 if (userInput === undefined) {
   userInput = "Mr. Nobody";
@@ -118,7 +124,7 @@ console.log("------------------");
 };
 
 // create function for do-what-it-says
-function doWhatItSays() {
+function doWhatItSays(userInput) {
   
     // use fs to read file random.txt 
     fs.readFile("random.txt", "utf8", function(err, data) {
@@ -130,9 +136,13 @@ function doWhatItSays() {
         for (var i = 0; i < output.length; i++) {
           console.log(output[i]);
         }
-        var command = output[0];
-        var userInput = output[1];
         // run spotify-this based on text in random.txt
+        command = output[0];
+        userInput = output[1];
+        evaluate(command, userInput);
+
       }
     })
 };
+
+evaluate(process.argv[2], process.argv[3]);
